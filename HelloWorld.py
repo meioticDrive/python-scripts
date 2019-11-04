@@ -1,4 +1,7 @@
 #!/usr/bin/python
-print "Hello World!"
-print "Hello World!"
-print "Hello World!"
+
+def main():
+	print("Hello World!")
+	print("Hello World!")
+	print("Hello World!")
+main()
