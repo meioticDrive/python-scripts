@@ -1,8 +1,11 @@
-#!/usr/local/bin/python
+#!/usr/bin/env python
 # The purpose of this script is to parse the most relevant columns from Bystro output
 
 def main():
     import re
+    import sys
+    #print(sys.version)
+    
     
     # Get the file names
     infilename = input("Enter input filename: ")
@@ -11,7 +14,9 @@ def main():
     # open the files
     infile = open(infilename,"r")
     outfile = open(outfilename,"w")
-    
+
+
+
     #Print column titles
     print("Chromosome\t", "Position\t", "Type\t", "phastCons\t", "phyloP\t", "cadd\t", "dbSNP.name\t", "dbSNP.func\t", "gnomad.genomes.id\t", "gnomad.genomes.af\t", "refSeq.siteType\t", "refSeq.exonicAllelefunction\t", "refSeq.name\t", "refSeq.name2\t", "refSeq.description\t", file=outfile)
     #Labels "refSeq.siteType", "refSeq.exonicAlleleFunction", "refSeq.description", "refSeq.name", "refSeq.name2", "phyloP", "CADD", "dbSNP.name", "dbSNP.func", "gnomad.genomes.id", "gnomad.genomes.af", "gnomad.exomes.id", "gnomad.exomes.af", "refSeq.clinvar.alleleID", "refSeq.clinvar.phenotypeList", "refSeq.clinvar.clinicalSignificance"
