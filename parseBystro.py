@@ -47,10 +47,29 @@ def main():
             continue
         
         #----------------------
-        # Process Gene Names
+        # Process Gene Names contained in temp[33] - refSeq.name2
         #----------------------
-        # Split array containing gene names - delimitated by ;
-        # Identify unique gene names
+        genename = temp[33]
+        
+        #Ignore lines with no gene names 
+        genename = re.match(!)
+        if genename:
+            continue
+        else
+        # Split array containing gene names - delimitated by ; or |
+        genename.split('|' or ';')
+            
+        
+        
+        
+        
+        # Identify unique gene names with set
+        
+        # Output gene names into new array - genename_temp
+        
+        genename = 
+        
+        
         # Use gene names to find OMIM entries (for adjacent column)
         # Output unique gene names to single column - delimit by ;
         # Output OMIM information - delimit by ;
