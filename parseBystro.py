@@ -47,28 +47,30 @@ def main():
             continue
         
         #----------------------
+        #Split input line
+        #----------------------
+        temp = line.split('\t')
+        
+        #----------------------
         # Process Gene Names contained in temp[33] - refSeq.name2
         #----------------------
         genename = temp[33]
-        
-        #Ignore lines with no gene names 
-        genename = re.match(!)
+        print(genename)
+        #Ignore lines that start with '!' - contain no gene name
+        genename = re.match('\A!', genename)
         if genename:
+            print('Made it into first match')
+            print(genename)
             continue
-        else
-        # Split array containing gene names - delimitated by ; or |
-        genename.split('|' or ';')
-            
-        
-        
-        
-        
-        # Identify unique gene names with set
-        
-        # Output gene names into new array - genename_temp
-        
-        genename = 
-        
+        else:
+            # Split array containing gene names - delimitated by ; or |
+            print('Second:')
+            print(genename)
+            genetemp = genename.split(('|;'))
+            print(genetemp)
+            # Identify unique gene names with set
+            gene_set = set(genetemp)
+            print(gene_set)
         
         # Use gene names to find OMIM entries (for adjacent column)
         # Output unique gene names to single column - delimit by ;
@@ -80,8 +82,8 @@ def main():
         #Print desired columns from bystro
         #----------------------
         #print(line[:-1])
-        temp = line.split('\t')
-        print(temp[0], '\t', temp[1], '\t', temp[2], '\t', temp[45], '\t', temp[46], '\t', temp[47], '\t', temp[48], '\t', temp[52], '\t', temp[66], '\t', temp[67], '\t', temp[16], '\t', temp[17], '\t', temp[32], '\t', temp[33], '\t', temp[30], '\t', file=outfile)
+
+        #print(temp[0], '\t', temp[1], '\t', temp[2], '\t', temp[45], '\t', temp[46], '\t', temp[47], '\t', temp[48], '\t', temp[52], '\t', temp[66], '\t', temp[67], '\t', temp[16], '\t', temp[17], '\t', temp[32], '\t', temp[33], '\t', temp[30], '\t', file=outfile)
         # , temp[32], temp[33], temp[36], temp[37], temp[38], temp[88], temp[89] 
     # close both files
     infile.close()
