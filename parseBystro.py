@@ -55,22 +55,32 @@ def main():
         # Process Gene Names contained in temp[33] - refSeq.name2
         #----------------------
         genename = temp[33]
-        print(genename)
+        #print('The gene name is:', genename)
+        
         #Ignore lines that start with '!' - contain no gene name
-        genename = re.match('\A!', genename)
-        if genename:
-            print('Made it into first match')
-            print(genename)
+        genetemp = re.match('\A!', genename)
+        if genetemp:
+            #print('Made it into first match')
+            #print(genetemp)
             continue
         else:
             # Split array containing gene names - delimitated by ; or |
-            print('Second:')
-            print(genename)
-            genetemp = genename.split(('|;'))
-            print(genetemp)
+            #print('Made it into the second match')
+            print('The gene name (in else) is', genename, file=outfile)
+            # Get rid of | characters in string
+            genestemp = genename.replace('|', ';')
+            print('The genestemp after replace is', genestemp, file=outfile)
+            genes = genestemp.split(';')
+            print('The genes after split are', genes, file=outfile)
+            geneset = set(genes)
+            print('The genes after set are', geneset, file=outfile)
+            #genetemp = str(genes)
+            #print("The genetemp after turning into a string is", genetemp, file=outfile)
+            #genesfinal = genetemp.split('\|')
+            #print(genesfinal, file=outfile)
             # Identify unique gene names with set
-            gene_set = set(genetemp)
-            print(gene_set)
+            #gene_set = set(genes)
+            #print(set(genesfinal), file=outfile)
         
         # Use gene names to find OMIM entries (for adjacent column)
         # Output unique gene names to single column - delimit by ;
